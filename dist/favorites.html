@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="KEPIL — поиск квартир и помощь в диалоге между арендатором и арендодателем."
+    />
+    <title>Избранное — KEPIL</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("kepil-theme") || "light";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="KEPIL — главная"
+          ><span class="brand-mark">k.</span>kepil<span class="brand-dot"
+            >®</span
+          ></a
+        >
+        <nav aria-label="Основная навигация">
+          <a href="catalog.html">Найти жильё</a
+          ><a href="help.html">Решить вопрос <span class="nav-dot"></span></a
+          ><a href="favorites.html" class="saved-link"
+            >Избранное <span id="saved-count">0</span></a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          aria-label="Переключить цветовую тему"
+          title="Сменить тему"
+        >
+          ◐</button
+        ><a class="header-cta" href="help.html">Давайте договоримся ↗</a>
+      </div>
+    </header>
+    <main id="main" class="shell page-main">
+      <p class="eyebrow">СОХРАНЕНО ДЛЯ ВАС</p>
+      <h1 class="page-title">Квартиры <em>на примете.</em></h1>
+      <p class="muted">
+        Вернитесь к тому, что понравилось. Избранное хранится в этом браузере.
+      </p>
+      <div id="favorites-grid" class="row g-4 favorites-grid"></div>
+    </main>
+    <footer>
+      <div class="shell footer-top">
+        <a class="brand" href="index.html"
+          >kepil<span class="brand-dot">®</span></a
+        >
+        <p>Хорошая аренда начинается<br />с понимания.</p>
+        <a href="catalog.html">Найти свой дом ↗</a>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 KEPIL · Учебный проект</span
+        ><span>Объявления демонстрационные. Обращения не отправляются.</span
+        ><a href="help.html">Помощь и диалог</a>
+      </div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

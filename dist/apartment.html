@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="KEPIL — поиск квартир и помощь в диалоге между арендатором и арендодателем."
+    />
+    <title>Квартира — KEPIL</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("kepil-theme") || "light";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="KEPIL — главная"
+          ><span class="brand-mark">k.</span>kepil<span class="brand-dot"
+            >®</span
+          ></a
+        >
+        <nav aria-label="Основная навигация">
+          <a href="catalog.html">Найти жильё</a
+          ><a href="help.html">Решить вопрос <span class="nav-dot"></span></a
+          ><a href="favorites.html" class="saved-link"
+            >Избранное <span id="saved-count">0</span></a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          aria-label="Переключить цветовую тему"
+          title="Сменить тему"
+        >
+          ◐</button
+        ><a class="header-cta" href="help.html">Давайте договоримся ↗</a>
+      </div>
+    </header>
+    <main id="main" class="shell page-main">
+      <a class="back-link" href="catalog.html">← К каталогу</a>
+      <div id="property-detail"></div>
+    </main>
+    <dialog id="contact-modal">
+      <button class="dialog-close" aria-label="Закрыть">×</button>
+      <p class="eyebrow">НАЧНИТЕ С ЗНАКОМСТВА</p>
+      <h2>Запрос на просмотр</h2>
+      <p class="muted">
+        Демонстрационная форма. Запрос сохранится только в вашем браузере и не
+        будет отправлен владельцу.
+      </p>
+      <form id="contact-form">
+        <label
+          >Ваше имя<input
+            name="name"
+            required
+            minlength="2"
+            maxlength="60"
+            autocomplete="name" /></label
+        ><label
+          >Email<input
+            name="email"
+            type="email"
+            required
+            autocomplete="email" /></label
+        ><label>Удобная дата<input name="date" type="date" required /></label
+        ><label
+          >Сообщение<textarea
+            name="message"
+            maxlength="1000"
+            rows="3"
+            placeholder="Здравствуйте! Хотелось бы посмотреть квартиру."
+          ></textarea></label
+        ><button class="btn btn-primary" type="submit">Сохранить запрос</button>
+      </form>
+    </dialog>
+    <footer>
+      <div class="shell footer-top">
+        <a class="brand" href="index.html"
+          >kepil<span class="brand-dot">®</span></a
+        >
+        <p>Хорошая аренда начинается<br />с понимания.</p>
+        <a href="catalog.html">Найти свой дом ↗</a>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 KEPIL · Учебный проект</span
+        ><span>Объявления демонстрационные. Обращения не отправляются.</span
+        ><a href="help.html">Помощь и диалог</a>
+      </div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

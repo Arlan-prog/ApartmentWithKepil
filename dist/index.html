@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="KEPIL — поиск квартир и помощь в диалоге между арендатором и арендодателем."
+    />
+    <title>KEPIL — аренда с пониманием</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("kepil-theme") || "light";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="KEPIL — главная"
+          ><span class="brand-mark">k.</span>kepil<span class="brand-dot"
+            >®</span
+          ></a
+        >
+        <nav aria-label="Основная навигация">
+          <a href="catalog.html">Найти жильё</a
+          ><a href="help.html">Решить вопрос <span class="nav-dot"></span></a
+          ><a href="favorites.html" class="saved-link"
+            >Избранное <span id="saved-count">0</span></a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          aria-label="Переключить цветовую тему"
+          title="Сменить тему"
+        >
+          ◐</button
+        ><a class="header-cta" href="help.html">Давайте договоримся ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> ВАШЕ МЕСТО. ВАШЕ СПОКОЙСТВИЕ.</p>
+          <h1>Найти квартиру.<br />Почувствовать<br /><em>себя дома.</em></h1>
+          <p class="hero-description">
+            Жильё, которое подходит вам.<br />И помощь, когда нужно
+            договориться.
+          </p>
+          <a class="text-link" href="catalog.html"
+            >Выбрать свой следующий адрес <span>↗</span></a
+          >
+        </div>
+        <div class="hero-photo">
+          <img
+            src="assets/hero.jpg"
+            alt="Светлая гостиная с мягким диваном и деревянной мебелью"
+            fetchpriority="high"
+          />
+          <div class="photo-label">
+            <span>МЕСТО ДЛЯ ВАШЕЙ ЖИЗНИ</span
+            ><strong>Больше, чем квадратные метры.</strong>
+          </div>
+          <span class="image-index">01 / ДОМА</span>
+        </div>
+        <form class="search-bar" action="catalog.html">
+          <label
+            >Где будем жить?<select name="city">
+              <option value="">Все города</option>
+              <option>Алматы</option>
+              <option>Астана</option>
+              <option>Шымкент</option>
+            </select></label
+          ><label
+            >Комнаты<select name="rooms">
+              <option value="">Неважно</option>
+              <option value="1">1 комната</option>
+              <option value="2">2 комнаты</option>
+              <option value="3">3 комнаты</option>
+            </select></label
+          ><label
+            >Бюджет в месяц<select name="max">
+              <option value="">Любой бюджет</option>
+              <option value="200000">До 200 000 ₸</option>
+              <option value="300000">До 300 000 ₸</option>
+              <option value="400000">До 400 000 ₸</option>
+            </select></label
+          ><button class="btn btn-primary" type="submit">
+            Найти квартиру <span>↗</span>
+          </button>
+        </form>
+      </section>
+      <section class="shell section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">НОВЫЙ АДРЕС — НОВАЯ ГЛАВА</p>
+            <h2>Здесь хочется остаться</h2>
+          </div>
+          <a class="text-link" href="catalog.html">Все квартиры ↗</a>
+        </div>
+        <div id="featured" class="row g-4"></div>
+      </section>
+      <section class="shell peace-section">
+        <div>
+          <p class="eyebrow">НЕ ТОЛЬКО ПОИСК ЖИЛЬЯ</p>
+          <h2>Квартира общая.<br />Понимание — <em>взаимное.</em></h2>
+          <p>
+            Депозит, ремонт, условия выезда. Иногда нужен<br class="desktop" />
+            просто понятный первый шаг к разговору.
+          </p>
+          <a href="help.html" class="btn btn-dark">Разобраться в ситуации ↗</a>
+        </div>
+        <div class="peace-list">
+          <a href="help.html?issue=deposit"
+            ><span>01</span>
+            <div>
+              Возврат депозита<small>Обсудить сумму и сроки возврата</small>
+            </div>
+            <b>↗</b></a
+          ><a href="help.html?issue=repair"
+            ><span>02</span>
+            <div>
+              Ремонт и бытовые вопросы<small
+                >Зафиксировать проблему и найти решение</small
+              >
+            </div>
+            <b>↗</b></a
+          ><a href="help.html?issue=leave"
+            ><span>03</span>
+            <div>
+              Выезд без разногласий<small>Согласовать детали заранее</small>
+            </div>
+            <b>↗</b></a
+          >
+        </div>
+      </section>
+      <section class="shell steps section">
+        <div>
+          <p class="eyebrow">ПРОСТО И ПО-ЧЕЛОВЕЧЕСКИ</p>
+          <h2>Меньше тревог.<br />Больше жизни.</h2>
+        </div>
+        <article>
+          <span>01 / ВЫБИРАЙТЕ</span>
+          <h3>Свой ритм. Свой район.</h3>
+          <p>
+            Сравнивайте квартиры по тому, что важно именно вам. Сохраняйте
+            понравившиеся.
+          </p>
+        </article>
+        <article>
+          <span>02 / ДОГОВАРИВАЙТЕСЬ</span>
+          <h3>Ясность с самого начала.</h3>
+          <p>
+            Обсуждайте условия и фиксируйте договорённости. Поможем начать
+            разговор.
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <div class="shell footer-top">
+        <a class="brand" href="index.html"
+          >kepil<span class="brand-dot">®</span></a
+        >
+        <p>Хорошая аренда начинается<br />с понимания.</p>
+        <a href="catalog.html">Найти свой дом ↗</a>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 KEPIL · Учебный проект</span
+        ><span>Объявления демонстрационные. Обращения не отправляются.</span
+        ><a href="help.html">Помощь и диалог</a>
+      </div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

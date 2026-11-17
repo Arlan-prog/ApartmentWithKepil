@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="KEPIL — поиск квартир и помощь в диалоге между арендатором и арендодателем."
+    />
+    <title>Помощь и диалог — KEPIL</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("kepil-theme") || "light";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="KEPIL — главная"
+          ><span class="brand-mark">k.</span>kepil<span class="brand-dot"
+            >®</span
+          ></a
+        >
+        <nav aria-label="Основная навигация">
+          <a href="catalog.html">Найти жильё</a
+          ><a href="help.html">Решить вопрос <span class="nav-dot"></span></a
+          ><a href="favorites.html" class="saved-link"
+            >Избранное <span id="saved-count">0</span></a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          aria-label="Переключить цветовую тему"
+          title="Сменить тему"
+        >
+          ◐</button
+        ><a class="header-cta" href="help.html">Давайте договоримся ↗</a>
+      </div>
+    </header>
+    <main id="main" class="shell page-main">
+      <p class="eyebrow">НА ОДНОЙ СТОРОНЕ — СТОРОНЕ ДИАЛОГА</p>
+      <h1 class="page-title">
+        Сложный вопрос.<br /><em>Спокойный разговор.</em>
+      </h1>
+      <p class="muted help-intro">
+        Поможем разложить ситуацию по шагам и подготовить обращение.<br />Вы
+        решаете, когда и как поделиться им со второй стороной.
+      </p>
+      <div class="help-layout">
+        <section class="help-form-panel">
+          <div class="section-number">
+            01 <span>Расскажите о ситуации</span>
+          </div>
+          <form id="help-form">
+            <label
+              >Я<select name="role">
+                <option value="tenant">Арендатор</option>
+                <option value="owner">Арендодатель</option>
+              </select></label
+            ><label
+              >Что хотите обсудить?<select name="issue">
+                <option value="deposit">Возврат депозита</option>
+                <option value="repair">Ремонт и неисправности</option>
+                <option value="payment">Оплата аренды</option>
+                <option value="leave">Выезд и передача квартиры</option>
+                <option value="other">Другой вопрос</option>
+              </select></label
+            ><label
+              >Как к вам обращаться?<input
+                name="name"
+                required
+                minlength="2"
+                maxlength="60"
+                placeholder="Ваше имя" /></label
+            ><label
+              >Что произошло?<textarea
+                name="details"
+                required
+                minlength="15"
+                maxlength="2000"
+                rows="4"
+                placeholder="Опишите факты: что произошло и когда. Минимум 15 символов."
+              ></textarea></label
+            ><label
+              >Какое решение вы предлагаете?<textarea
+                name="solution"
+                required
+                minlength="10"
+                maxlength="1000"
+                rows="3"
+                placeholder="Например: согласовать дату осмотра квартиры."
+              ></textarea></label
+            ><button class="btn btn-primary" type="submit">
+              Подготовить обращение ↗
+            </button>
+            <p class="form-note">
+              Черновик останется в этом браузере. Никому ничего не отправляем.
+            </p>
+          </form>
+        </section>
+        <section class="guidance-panel">
+          <div class="section-number">02 <span>Начните с этих шагов</span></div>
+          <div id="guidance"></div>
+          <div class="legal-note">
+            Этот помощник помогает организовать диалог и не заменяет
+            консультацию юриста. Он не определяет, кто прав, и не гарантирует
+            разрешение спора.
+          </div>
+          <div id="draft-panel" hidden>
+            <h2>Ваше обращение</h2>
+            <p class="muted">
+              Проверьте и отредактируйте текст перед отправкой.
+            </p>
+            <textarea
+              id="draft-text"
+              rows="12"
+              aria-label="Текст обращения"
+            ></textarea>
+            <div class="draft-actions">
+              <button id="copy-draft" class="btn btn-dark">Копировать</button
+              ><button id="download-draft" class="btn btn-outline">
+                Скачать .txt</button
+              ><button id="clear-draft" class="plain">Удалить</button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="faq">
+        <p class="eyebrow">ПРОЗРАЧНО С САМОГО НАЧАЛА</p>
+        <h2>Важные вопросы</h2>
+        <details>
+          <summary>KEPIL отправит обращение за меня?</summary>
+          <p>
+            Нет. Вы получаете редактируемый текст, который можете скопировать
+            или скачать и отправить самостоятельно удобным способом.
+          </p>
+        </details>
+        <details>
+          <summary>Кто видит мои данные?</summary>
+          <p>
+            В этой учебной версии избранное, запросы и последний черновик
+            сохраняются в localStorage вашего браузера. Не вводите
+            конфиденциальные сведения на общем компьютере. Черновик можно
+            удалить кнопкой под обращением.
+          </p>
+        </details>
+        <details>
+          <summary>Можно ли действительно арендовать эти квартиры?</summary>
+          <p>
+            Нет. Это демонстрационные объявления для учебного проекта.
+            Фотографии иллюстрируют интерьеры и не подтверждают существование
+            объекта по указанному адресу.
+          </p>
+        </details>
+      </section>
+    </main>
+    <footer>
+      <div class="shell footer-top">
+        <a class="brand" href="index.html"
+          >kepil<span class="brand-dot">®</span></a
+        >
+        <p>Хорошая аренда начинается<br />с понимания.</p>
+        <a href="catalog.html">Найти свой дом ↗</a>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 KEPIL · Учебный проект</span
+        ><span>Объявления демонстрационные. Обращения не отправляются.</span
+        ><a href="help.html">Помощь и диалог</a>
+      </div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

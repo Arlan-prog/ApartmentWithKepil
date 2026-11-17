@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="KEPIL — поиск квартир и помощь в диалоге между арендатором и арендодателем."
+    />
+    <title>Каталог квартир — KEPIL</title>
+    <link rel="stylesheet" href="assets/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("kepil-theme") || "light";
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">К содержимому</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="KEPIL — главная"
+          ><span class="brand-mark">k.</span>kepil<span class="brand-dot"
+            >®</span
+          ></a
+        >
+        <nav aria-label="Основная навигация">
+          <a href="catalog.html">Найти жильё</a
+          ><a href="help.html">Решить вопрос <span class="nav-dot"></span></a
+          ><a href="favorites.html" class="saved-link"
+            >Избранное <span id="saved-count">0</span></a
+          >
+        </nav>
+        <button
+          class="theme-toggle"
+          aria-label="Переключить цветовую тему"
+          title="Сменить тему"
+        >
+          ◐</button
+        ><a class="header-cta" href="help.html">Давайте договоримся ↗</a>
+      </div>
+    </header>
+    <main id="main" class="shell page-main">
+      <p class="eyebrow">ВАШ СЛЕДУЮЩИЙ АДРЕС</p>
+      <h1 class="page-title">Место, которое <em>ваше.</em></h1>
+      <p class="muted">
+        Выбирайте не только стены. Выбирайте, как хочется жить.
+      </p>
+      <div class="catalog-layout">
+        <aside class="filter-panel">
+          <div class="filter-heading">
+            <h2>Подобрать жильё</h2>
+            <button id="reset-filters" class="plain">Сбросить</button>
+          </div>
+          <form id="filters">
+            <label
+              >Поиск<input
+                name="q"
+                type="search"
+                placeholder="Район, улица или название" /></label
+            ><label
+              >Город<select name="city">
+                <option value="">Все города</option>
+                <option>Алматы</option>
+                <option>Астана</option>
+                <option>Шымкент</option>
+              </select></label
+            ><label
+              >Комнаты<select name="rooms">
+                <option value="">Любое количество</option>
+                <option value="1">1 комната</option>
+                <option value="2">2 комнаты</option>
+                <option value="3">3 комнаты</option>
+              </select></label
+            ><label
+              >Цена до, ₸<input
+                name="max"
+                type="number"
+                min="0"
+                step="10000"
+                placeholder="Без ограничений" /></label
+            ><label class="check-label"
+              ><input name="pets" type="checkbox" /> Можно с питомцами</label
+            >
+          </form>
+          <div class="filter-note">
+            ⌂
+            <p>Не нашли свой вариант?<br />Попробуйте расширить поиск.</p>
+          </div>
+        </aside>
+        <section class="results">
+          <div class="results-bar">
+            <p id="result-count" aria-live="polite"></p>
+            <label class="sort-label"
+              >Порядок<select id="sort">
+                <option value="default">Сначала новые</option>
+                <option value="price-asc">Сначала дешевле</option>
+                <option value="price-desc">Сначала дороже</option>
+                <option value="area">По площади</option>
+              </select></label
+            >
+          </div>
+          <div class="row g-4" id="catalog-grid"></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="shell footer-top">
+        <a class="brand" href="index.html"
+          >kepil<span class="brand-dot">®</span></a
+        >
+        <p>Хорошая аренда начинается<br />с понимания.</p>
+        <a href="catalog.html">Найти свой дом ↗</a>
+      </div>
+      <div class="shell footer-bottom">
+        <span>© 2026 KEPIL · Учебный проект</span
+        ><span>Объявления демонстрационные. Обращения не отправляются.</span
+        ><a href="help.html">Помощь и диалог</a>
+      </div>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/jquery.min.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
